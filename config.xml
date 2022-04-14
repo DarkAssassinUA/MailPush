@@ -2,9 +2,10 @@
 <extension>
 	<information>
 		<name>MailPush</name>
-		<version>1.2</version>
+		<version>1.0RU</version>
 		<author>guoyongzhi</author>
-		<id>MailPush</id>
+		<author>Dark_AssassinUA</author>
+		<id>MailPushRU</id>
 	</information>
 	<menus>
 		<menu type="json" dynamic="true">menu.json</menu>
