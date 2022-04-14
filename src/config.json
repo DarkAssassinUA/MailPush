@@ -1,12 +1,13 @@
 {
-    "user": "mykindlemail@outlook.com",
-    "password": "abc123",
-    "host": "outlook.office365.com",
-    "port": 993,
-    "mailbox": "INBOX",
-    "criteria": ["UNSEEN"],
-    "maxage": 7,
-    "maxnum": 5,
-    "downloaddir": "/mnt/us/documents/downloads",
-    "root": "/mnt/us/"
+    "user": "xxx@xxx.com",	#укажите почтовый ящик откуда будут загружаться книги
+    "password": "password", #укажите пароль от ящика
+    "host": "imap.gmail.com",	#укажите адрес хоста IMAP
+    "port": 993,	#Укажите порт
+    "mailbox": "INBOX", #укажите папку в почтовом ящике
+    "criteria": ["UNSEEN"],#укажите прочитано или нет
+    "maxage": 7, #укажите максимальный возраст письма в днях
+    "maxnum": 5, #укажите максимальное количество писем
+    "downloaddir": "/mnt/us/documents/downloads",	№укажите папку для загрузки
+    "root": "/mnt/us/" №укажите корневую папку устройства(менять с осторожностью)_
+	
 }

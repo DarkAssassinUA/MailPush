@@ -4,3 +4,4 @@ download*
 __pycache__
 *.ipynb
 src/config.json
+*.bak

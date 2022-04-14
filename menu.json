@@ -4,74 +4,69 @@
 			"name": "MailPush",
 			"priority": 0,
 			"items": [
+			{
+					"name": "Переведено Dark_AssassinUA для 4PDA.TO",
+					"priority": 0,
+					"action": "",
+					"param": ""
+				},
 				{
-					"name": "Fetch unseen mails in recent 2 days",
+					"name": "Непрочитанные письма за 2 дня",
 					"priority": 1,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox INBOX --criteria UNSEEN --maxage 2 --maxnum 100 >log.txt 2>&1",
 					"param": ""
 				},
 				{
-					"name": "Fetch unseen mails in recent 30 days",
+					"name": "Непрочитанные письма за 30 дней",
 					"priority": 2,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox INBOX --criteria UNSEEN --maxage 30 --maxnum 100 >log.txt 2>&1",
 					"param": ""
 				},
-				{
-					"name": "Fetch unseen junk mails in recent 2 days",
-					"priority": 3,
-					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox JUNK --criteria UNSEEN --maxage 2 --maxnum 100 >log.txt 2>&1",
-					"param": ""
-				},
+				
                 {
-					"name": "Fetch the latest mail in recent 7 days",
+					"name": "Все письма за последние 7 дней",
 					"priority": 4,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox INBOX --criteria ' ' --maxage 7 --maxnum 1 >log.txt 2>&1",
 					"param": ""
 				},
                 {
-					"name": "Fetch the latest 3 mails in recent 30 days",
+					"name": "Последние 3 письма за последние 30 дней",
 					"priority": 5,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox INBOX --criteria ' ' --maxage 30 --maxnum 3 >log.txt 2>&1",
 					"param": ""
 				},
                 {
-					"name": "Fetch the latest 5 mails in recent 60 days",
+					"name": "Последние 5 писем за последние 60 дней",
 					"priority": 6,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox INBOX --criteria ' ' --maxage 60 --maxnum 5 >log.txt 2>&1",
 					"param": ""
 				},
                 {
-					"name": "Fetch the latest junk mail in recent 7 days",
-					"priority": 7,
-					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox JUNK --criteria ' ' --maxage 7 --maxnum 1 >log.txt 2>&1",
-					"param": ""
-				},
-                {
-					"name": "Fetch mails wifh config.json",
+					"name": "Загрузить письма согласно config.json",
 					"priority": 8,
 					"action": "./mailpush.sh python3 -u src/mailpush.py >log.txt 2>&1",
 					"param": ""
 				},
                 {
-					"name": "Show result",
+					"name": "Показать результат",
 					"priority": 9,
 					"action": "../leafpad/bin/leafpad result.txt",
 					"param": "",
 					"exitmenu": false
 				},
                 {
-					"name": "Show log",
+					"name": "Показать лог",
 					"priority": 10,
 					"action": "../leafpad/bin/leafpad log.txt",
 					"param": "",
 					"exitmenu": false
 				},
                 {
-					"name": "Kill",
+					"name": "Убить процесс и выйти",
 					"priority": 11,
 					"action": "ps aux | grep [m]ailpush | awk '{print $2}' | xargs -i kill {}",
 					"param": "",
-					"exitmenu": false
+					"exitmenu": true
 				}
 			]
 		}
