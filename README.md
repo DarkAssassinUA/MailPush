@@ -40,6 +40,7 @@
 |yahoo|imap.mail.yahoo.com|993|
 |outlook|imap-mail.outlook.com|993|
 |hotmail|outlook.office365.com|993|
+|mailru|imap.mail.ru|993|
 |qq|imap.qq.com|993|
 |126|imap.126.com|993|
 |163|imap.163.com|993|
