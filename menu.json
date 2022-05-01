@@ -5,12 +5,6 @@
 			"priority": 0,
 			"items": [
 			{
-					"name": "Переведено Dark_AssassinUA для 4PDA.TO",
-					"priority": 0,
-					"action": "",
-					"param": ""
-				},
-				{
 					"name": "Непрочитанные письма за 2 дня",
 					"priority": 1,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox INBOX --criteria UNSEEN --maxage 2 --maxnum 100 >log.txt 2>&1",
@@ -67,6 +61,26 @@
 					"action": "ps aux | grep [m]ailpush | awk '{print $2}' | xargs -i kill {}",
 					"param": "",
 					"exitmenu": true
+				},
+				{
+					"name": "Переведено Dark_AssassinUA",
+					"priority": 1000,
+					"exitmenu": false,
+					"checked": true,
+					"status": false,
+					"refresh": false,
+					"action": "xxxx",
+					"internal": "status version MailPush 1.2"
+				},
+				{
+					"name": "Доп.инфо bit.ly/dark_kindle",
+					"priority": 1000,
+					"exitmenu": false,
+					"checked": true,
+					"status": false,
+					"refresh": false,
+					"action": "xxxx",
+					"internal": "status Hello there!"
 				}
 			]
 		}

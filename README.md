@@ -42,4 +42,5 @@
 |hotmail|outlook.office365.com|993|
 |mailru|imap.mail.ru|993|
 |rambler|imap.rambler.ru|993|
+|yandex|imap.yandex.ru|993|
 
