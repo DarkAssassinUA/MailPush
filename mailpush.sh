@@ -19,7 +19,7 @@ if [ 0 -eq `lipc-get-prop com.lab126.cmd wirelessEnable` ]; then
 	WIFI_IS_OFF=1
 	
 	# wait for network to be up
-    TEST_DOMAIN="www.baidu.com"
+    TEST_DOMAIN="www.google.com"
     TIMER=30     # number of seconds to attempt a connection
     CONNECTED=0                  # whether we are currently connected
     while [ 0 -eq $CONNECTED ]; do
