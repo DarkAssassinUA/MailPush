@@ -19,9 +19,10 @@ if [ 0 -eq `lipc-get-prop com.lab126.cmd wirelessEnable` ]; then
 	WIFI_IS_OFF=1
 	
 	# wait for network to be up
-    TEST_DOMAIN="www.google.com"
-    TIMER=30     # number of seconds to attempt a connection
-    CONNECTED=0                  # whether we are currently connected
+    TEST_DOMAIN="www.bing.com"
+    TIMEOUT=30      # number of seconds to attempt a connection
+    TIMER=$TIMEOUT  
+    CONNECTED=0     # whether we are currently connected
     while [ 0 -eq $CONNECTED ]; do
     	# test whether we can ping outside
     	/bin/ping -c 1 -w 2 $TEST_DOMAIN > /dev/null 2>&1 && CONNECTED=1
@@ -29,7 +30,7 @@ if [ 0 -eq `lipc-get-prop com.lab126.cmd wirelessEnable` ]; then
     	if [ 0 -eq $CONNECTED ]; then
     		TIMER=$(($TIMER-1))
     		if [ 0 -eq $TIMER ]; then
-    			logger "No internet connection after ${NETWORK_TIMEOUT} seconds, aborting."
+    			logger "No internet connection after ${TIMEOUT} seconds, aborting."
     			break
     		else
     			sleep 1
@@ -42,7 +43,8 @@ if [ 0 -eq `lipc-get-prop com.lab126.cmd wirelessEnable` ]; then
         eips 30 3 "No internet connection        " > /dev/null
     fi
 fi
-
+[ -e "result1.txt" ] && cp "result1.txt" "result2.txt" #backup recent results
+[ -e "result.txt" ] && cp "result.txt" "result1.txt"
 if :; then
     #run the main task from arguments
     "$@"
@@ -57,18 +59,19 @@ if :; then
     fi
     sleep 5
     eips 30 1 "$msg" > /dev/null
-
 fi &
 
-TIMER=600     # number of seconds to attempt a connection
+TIMEOUT=600   # number of seconds before forced termination
+TIMER=$TIMEOUT  
 while [ -f runningflag ]; do
     TIMER=$(($TIMER-1))
 	if [ 0 -eq $TIMER ]; then
-		logger "No internet connection after ${NETWORK_TIMEOUT} seconds, aborting."
+		logger "Not completed after ${TIMEOUT} seconds, aborting."
 		break
 	fi
 	sleep 1
 done
+./viewtxt.sh result.txt > /dev/null &
 sleep 6
 kill $(jobs -p) > /dev/null 2>&1
 if [ -f runningflag  ]; then

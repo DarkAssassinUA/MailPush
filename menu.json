@@ -44,19 +44,19 @@
                 {
 					"name": "Показать результат",
 					"priority": 9,
-					"action": "../leafpad/bin/leafpad result.txt",
+					"action": "./viewtxt.sh result*.txt",
 					"param": "",
 					"exitmenu": false
 				},
                 {
 					"name": "Показать лог",
 					"priority": 10,
-					"action": "../leafpad/bin/leafpad log.txt",
+					"action": "./viewtxt.sh log.txt",
 					"param": "",
 					"exitmenu": false
 				},
                 {
-					"name": "Убить процесс и выйти",
+					"name": "Выйти",
 					"priority": 11,
 					"action": "ps aux | grep [m]ailpush | awk '{print $2}' | xargs -i kill {}",
 					"param": "",
@@ -70,7 +70,7 @@
 					"status": false,
 					"refresh": false,
 					"action": "xxxx",
-					"internal": "status version MailPush 1.2"
+					"internal": "status version MailPush 1.5RU"
 				},
 				{
 					"name": "Доп.инфо bit.ly/dark_kindle",
